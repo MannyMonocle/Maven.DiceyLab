@@ -29,4 +29,13 @@ public class DiceTest {
             System.out.println(rollTest);
         }
     }
+
+    @Test
+    public void tossAndSumTestNegativeDice(){
+        for(int i = 0; i < 3; i++) {
+            Dice testingDice = new Dice(-2);
+            int rollTest = testingDice.tossAndSum();
+            System.out.println(rollTest);
+        }
+    }
 }

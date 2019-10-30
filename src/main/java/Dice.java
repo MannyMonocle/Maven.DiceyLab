@@ -6,6 +6,7 @@ public class Dice {
         this.N = numberOfDies;
     }
 
+
     public int singleroll() {
         return  (int) (Math.random()*6) + 1;
     }
