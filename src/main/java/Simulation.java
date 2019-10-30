@@ -24,17 +24,29 @@ public class Simulation {
 
     }
 
-    public String printResults(){
+    public void printResults(){
 
         this.runsimulation();
 
-        String ans = "***\n + Simulation of "+numberOfDies+" dice tossed for "+numberOfTosses+ " times.\n + *** \n\n";
+        String ans = "***\n"
+                    +"Simulation of "+numberOfDies+" dice tossed for "+numberOfTosses+ " times.\n"
+                    +"*** \n\n";
 
-        for(int i = numberOfTosses; i <= numberOfTosses * 6; i++){
-            ans += String.format("%3x ");
+        for(int i = numberOfDies; i <= numberOfDies * 6; i++){
+            int tot = results.getBin(i);
+            double frac = tot/numberOfTosses;
+            int stars = (int) frac * 100;
+
+            ans += String.format("%4d  :%10x: %.2f ", i, tot, frac);
+
+            for(int j = 0; j < stars; j++){ ans += "*";};
+
+            ans += "\n";
+
         }
 
-        return  ans;
+        System.out.println(ans);
+
     }
 
 }
