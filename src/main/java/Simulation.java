@@ -34,10 +34,10 @@ public class Simulation {
 
         for(int i = numberOfDies; i <= numberOfDies * 6; i++){
             int tot = results.getBin(i);
-            double frac = tot/numberOfTosses;
-            int stars = (int) frac * 100;
+            double frac = (double) tot/numberOfTosses;
+            int stars = tot/10000;
 
-            ans += String.format("%4d  :%10x: %.2f ", i, tot, frac);
+            ans += String.format("%4d  :%10d: %1.2f ", i, tot, frac);
 
             for(int j = 0; j < stars; j++){ ans += "*";};
 
